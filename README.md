@@ -13,12 +13,23 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/eliasbuenosdias/music-glass/releases">
+  <a href="https://github.com/eliasbuenosdias/music-glass/releases/latest">
     <img src="https://img.shields.io/badge/Download-Latest_Release-blue?style=for-the-badge&logo=apple" alt="Download" />
   </a>
   <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License" />
   <img src="https://img.shields.io/badge/Engine-Rust_%26_Tauri-orange?style=for-the-badge&logo=rust" alt="Engine" />
 </p>
+
+---
+
+## 📥 Download
+Choose the installer for your platform from our **[Latest Releases](https://github.com/eliasbuenosdias/music-glass/releases/latest)**:
+
+| Platform    | Format               | Link                                                                                   |
+| :---------- | :------------------- | :------------------------------------------------------------------------------------- |
+| **macOS**   | `.dmg` / `.app`      | [Download for Mac](https://github.com/eliasbuenosdias/music-glass/releases/latest)     |
+| **Windows** | `.msi` / `.exe`      | [Download for Windows](https://github.com/eliasbuenosdias/music-glass/releases/latest) |
+| **Linux**   | `.AppImage` / `.deb` | [Download for Linux](https://github.com/eliasbuenosdias/music-glass/releases/latest)   |
 
 ---
 
