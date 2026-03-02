@@ -1,0 +1,16 @@
+{
+  "identifier": "main-capability",
+  "description": "Main application capability for MusicGlass",
+  "windows": [
+    "main"
+  ],
+  "permissions": [
+    "core:default",
+    "shell:default",
+    "dialog:default",
+    "fs:default",
+    "core:event:default",
+    "core:window:default",
+    "core:app:default"
+  ]
+}

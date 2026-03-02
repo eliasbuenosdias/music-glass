@@ -1,0 +1,25 @@
+[package]
+name = "music-glass"
+version = "0.1.0"
+description = "A static video generator for YouTube"
+authors = ["MusicGlass Team"]
+edition = "2021"
+rust-version = "1.77.2"
+
+[build-dependencies]
+tauri-build = { version = "2.5.5", features = [] }
+
+[dependencies]
+tauri = { version = "2.10.2", features = ["macos-private-api"] }
+tauri-plugin-shell = "2.3.5"
+tauri-plugin-dialog = "2.6.0"
+tauri-plugin-fs = "2.4.5"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1", features = ["full"] }
+anyhow = "1.0"
+tempfile = "3.26.0"
+regex = "1.10"
+
+[features]
+custom-protocol = ["tauri/custom-protocol"]

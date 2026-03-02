@@ -1,0 +1,42 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "useDefineForClassFields": true,
+        "module": "ESNext",
+        "resolveJsonModule": true,
+        "allowJs": true,
+        "checkJs": true,
+        "strict": true,
+        "noEmit": true,
+        "moduleResolution": "bundler",
+        "allowImportingTsExtensions": true,
+        "isolatedModules": true,
+        "moduleDetection": "force",
+        "lib": [
+            "ESNext",
+            "DOM",
+            "DOM.Iterable"
+        ],
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "baseUrl": ".",
+        "paths": {
+            "$lib": [
+                "src/lib"
+            ],
+            "$lib/*": [
+                "src/lib/*"
+            ]
+        }
+    },
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.d.ts",
+        "src/**/*.svelte",
+        "vite.config.ts",
+        "svelte.config.js"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

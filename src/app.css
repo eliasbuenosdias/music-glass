@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-white antialiased selection:bg-blue-500/30;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply backdrop-blur-xl bg-white/5 dark:bg-black/20 
+           border border-white/10 dark:border-white/20 
+           shadow-2xl shadow-black/20 
+           rounded-3xl p-8 
+           saturate-150 transition-all duration-500;
+  }
+
+  .glass-card {
+    @apply glass hover:scale-105 hover:shadow-glow;
+  }
+
+  .btn-glass {
+    @apply glass flex items-center justify-center p-3 font-bold 
+           bg-gradient-to-r from-blue-400/20 to-purple-400/20
+           hover:from-blue-400/30 hover:to-purple-400/30 
+           active:scale-95 cursor-pointer;
+  }
+
+  .input-glass {
+    @apply glass bg-white/5 border-white/10 focus:border-blue-500/50 
+           focus:outline-none transition-all duration-300;
+  }
+}
+
+/* Background animation */
+.bg-gradient-dynamic {
+  background: radial-gradient(circle at top left, #1e3a8a, transparent),
+              radial-gradient(circle at bottom right, #581c87, transparent),
+              radial-gradient(circle at center, #020617, #020617);
+  background-attachment: fixed;
+}
