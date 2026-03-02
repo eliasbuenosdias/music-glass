@@ -3,7 +3,7 @@
 </p>
 
 # 💎 MusicGlass
-### The Premium macOS Video Creator for Musicians
+### The Premium Multi-platform Video Creator for Musicians
 **Static Image + Audio → High-Fidelity MP4**
 
 ---
@@ -14,9 +14,10 @@
 
 <p align="center">
   <a href="https://github.com/eliasbuenosdias/music-glass/releases/latest">
-    <img src="https://img.shields.io/badge/Download-Latest_Release-blue?style=for-the-badge&logo=apple" alt="Download" />
+    <img src="https://img.shields.io/badge/Download-Latest_Release-blue?style=for-the-badge&logo=github" alt="Download" />
   </a>
   <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License" />
+  <img src="https://img.shields.io/badge/Platforms-macOS_|_Windows_|_Linux-lightgrey?style=for-the-badge" alt="Platforms" />
   <img src="https://img.shields.io/badge/Engine-Rust_%26_Tauri-orange?style=for-the-badge&logo=rust" alt="Engine" />
 </p>
 
@@ -34,10 +35,10 @@ Choose the installer for your platform from our **[Latest Releases](https://gith
 ---
 
 ## ✨ Overview
-**MusicGlass** is a minimalist, high-performance desktop application designed for musicians and creators who need to turn their tracks into beautiful, social-media-ready videos. No more fighting with complex video editors—just drag, drop, and export.
+**MusicGlass** is a minimalist, high-performance desktop application designed for musicians and creators who need to turn their tracks into beautiful, social-media-ready videos. Available for **macOS**, **Windows**, and **Linux**. No more fighting with complex video editors—just drag, drop, and export.
 
 ### 🎭 Premium Aesthetics
-- **Liquid Glass UI**: Fully integrated with the macOS design language (Vibrancy & Vitality).
+- **Universal Design**: A clean, glassmorphic UI that feels native on any platform.
 - **Micro-animations**: Smooth transitions and hover effects for a premium feel.
 - **Smart Logic**: Automatically detects artist and song titles from your files.
 
@@ -58,9 +59,10 @@ Choose the installer for your platform from our **[Latest Releases](https://gith
 To use or build **MusicGlass**, you need:
 1. **FFmpeg & HandBrakeCLI**:
    ```bash
-   brew install ffmpeg handbrake
+   brew install ffmpeg handbrake # macOS
+   # For Windows or Linux, ensure HandBrakeCLI is in your PATH.
    ```
-2. **macOS 10.15+**: Optimized for Apple Silicon and Intel.
+2. **Supported OS**: macOS 10.15+, Windows 10+, or Ubuntu 22.04+ (and major Linux distros).
 
 ---
 
