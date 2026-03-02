@@ -2,7 +2,7 @@
 ### Modern macOS Video Creator (Static Image + Audio → MP4)
 Built with **Tauri v2**, **SvelteKit**, and **Rust**.
 
-![MusicGlass Showcase](./assets/showcase/screenshot_2026-03-02T17-00-10-579Z.png)
+![MusicGlass Showcase](./assets/showcase/screenshot_2026-03-02T17-22-13-598Z.png)
 
 MusicGlass is a lightweight, open-source desktop application for macOS designed to convert audio tracks (MP3/WAV) and a cover image into a high-quality static MP4 video, optimized for YouTube.
 
