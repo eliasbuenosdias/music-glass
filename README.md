@@ -1,78 +1,83 @@
-# 💎 MusicGlass
-### Modern macOS Video Creator (Static Image + Audio → MP4)
-Built with **Tauri v2**, **SvelteKit**, and **Rust**.
-
 <p align="center">
-  <img src="./assets/showcase/screenshot_2026-03-02T17-22-13-598Z.png" alt="MusicGlass Showcase" width="100%">
+  <img src="./src-tauri/icons/128x128@2x.png" width="128" alt="MusicGlass Logo" />
 </p>
 
-MusicGlass is a lightweight, open-source desktop application for macOS designed to convert audio tracks (MP3/WAV) and a cover image into a high-quality static MP4 video, optimized for YouTube.
-
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![macOS Version](https://img.shields.io/badge/macOS-10.15+-brightgreen.svg)
-![HandBrake Required](https://img.shields.io/badge/requires-HandBrake-red.svg)
+# 💎 MusicGlass
+### The Premium macOS Video Creator for Musicians
+**Static Image + Audio → High-Fidelity MP4**
 
 ---
 
-## 🚀 Features
-- **Liquid Glass UI**: Modern glassmorphism design (Apple Control Center style).
-- **Drag & Drop**: Seamlessly add audio and cover art.
-- **Smart Metadata**: Automatic extraction of artist/title from ID3 tags.
-- **Progress Tracking**: Real-time encoding updates.
-- **Native Performance**: Ultra-fast Rust backend with async processing.
-- **Open Source**: MIT licensed, clean, and extensible.
+<p align="center">
+  <img src="./assets/showcase/screenshot_2026-03-02T17-22-13-598Z.png" width="100%" alt="MusicGlass Interface Showcase" style="border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 50px rgba(0,0,0,0.5);" />
+</p>
+
+<p align="center">
+  <a href="https://github.com/eliasbuenosdias/music-glass/releases">
+    <img src="https://img.shields.io/badge/Download-Latest_Release-blue?style=for-the-badge&logo=apple" alt="Download" />
+  </a>
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License" />
+  <img src="https://img.shields.io/badge/Engine-Rust_%26_Tauri-orange?style=for-the-badge&logo=rust" alt="Engine" />
+</p>
+
+---
+
+## ✨ Overview
+**MusicGlass** is a minimalist, high-performance desktop application designed for musicians and creators who need to turn their tracks into beautiful, social-media-ready videos. No more fighting with complex video editors—just drag, drop, and export.
+
+### 🎭 Premium Aesthetics
+- **Liquid Glass UI**: Fully integrated with the macOS design language (Vibrancy & Vitality).
+- **Micro-animations**: Smooth transitions and hover effects for a premium feel.
+- **Smart Logic**: Automatically detects artist and song titles from your files.
+
+---
+
+## 🚀 Core Features
+| Feature                 | Description                                                      |
+| :---------------------- | :--------------------------------------------------------------- |
+| **Ultra-Fast Encoding** | Leverages Rust & HandBrakeCLI for lightning-fast MP4 generation. |
+| **Retina UI**           | High-DPI support with glassmorphism effects throughout the app.  |
+| **Drag & Drop**         | Intuitive workspace for audio (MP3/WAV) and cover art (JPG/PNG). |
+| **One-Click Export**    | Optimized for YouTube, Instagram, and TikTok formats.            |
+| **Native Performance**  | Zero-lag interface built with the latest Tauri v2 framework.     |
 
 ---
 
 ## 🔧 Prerequisites
-To build or run this application, ensure you have the following installed:
-1. **Rust & Tauri v2 SDK**: [Install Rust](https://www.rust-lang.org/tools/install)
-2. **FFmpeg & HandBrakeCLI**:
+To use or build **MusicGlass**, you need:
+1. **FFmpeg & HandBrakeCLI**:
    ```bash
    brew install ffmpeg handbrake
    ```
-3. **Node.js & pnpm**: 
-   ```bash
-   brew install node pnpm
-   ```
+2. **macOS 10.15+**: Optimized for Apple Silicon and Intel.
 
 ---
 
-## 🛠️ Installation & Development
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/yourusername/musicglass.git
-   cd musicglass
-   ```
+## 🛠️ Development
+```bash
+# Clone the repository
+git clone https://github.com/eliasbuenosdias/music-glass.git
 
-2. **Install dependencies**:
-   ```bash
-   pnpm i
-   ```
+# Install dependencies
+pnpm install
 
-3. **Run in development mode**:
-   ```bash
-   pnpm tauri dev
-   ```
+# Run in development mode
+pnpm tauri dev
 
-4. **Build the production .app**:
-   ```bash
-   pnpm tauri build
-   ```
+# Build production bundle
+pnpm tauri build
+```
 
 ---
 
-## 📂 Tech Stack
-- **Frontend**: [SvelteKit](https://kit.svelte.dev/), [TailwindCSS](https://tailwindcss.com/)
-- **Backend**: [Tauri v2](https://v2.tauri.app/), [Rust](https://www.rust-lang.org/)
-- **Video Engine**: FFmpeg (Looping) + HandBrakeCLI (Fast Encoding)
-- **Icons**: [lucide-svelte](https://lucide.dev/)
-- **Metadata**: [music-metadata-browser](https://github.com/borewit/music-metadata-browser)
+## 📂 Architecture
+*   **Frontend**: SvelteKit + TailwindCSS (Glassmorphism engine).
+*   **Backend**: Rust (High-concurrency video processor).
+*   **Release**: Automated GitHub Actions for macOS, Windows, and Linux.
 
 ---
 
-## 📄 License
-MusicGlass is released under the **MIT License**. See `LICENSE` for details.
-
----
-*Created with ❤️ for the YouTube Creator Community.*
+<p align="center">
+  Creado con ❤️ por <b>Elias Prieto</b><br/>
+  <a href="https://eliasbuenosdias.github.io/Elias-Porfolio/">Portfolio</a> • <a href="mailto:dev-app@eliasp.simplelogin.com">Contacto</a>
+</p>
