@@ -61,3 +61,20 @@ pub async fn cancel_generation(state: State<'_, GenerationState>) -> Result<(), 
     }
     Ok(())
 }
+
+#[tauri::command]
+pub async fn save_screenshot(src: String, dest: String) -> Result<(), String> {
+    // Aseguramos que el directorio de destino existe
+    if let Some(parent) = std::path::Path::new(&dest).parent() {
+        std::fs::create_dir_all(parent).map_err(|e| e.to_string())?;
+    }
+    
+    // Copiamos el archivo del temporal al proyecto
+    // Usamos copy + remove en lugar de rename porque pueden estar en discos diferentes (SSD externo)
+    std::fs::copy(&src, &dest).map_err(|e| e.to_string())?;
+    
+    // Intentamos eliminar el temporal, pero no fallamos si no podemos
+    let _ = std::fs::remove_file(&src);
+    
+    Ok(())
+}

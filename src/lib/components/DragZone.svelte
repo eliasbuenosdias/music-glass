@@ -127,10 +127,10 @@
         >
             <svelte:component
                 this={icon}
-                size={80}
+                size={48}
                 class={isOver ? "animate-bounce" : "animate-pulse"}
             />
-            <p class="font-medium text-lg">{label}</p>
+            <p class="font-medium text-base">{label}</p>
         </div>
     {/if}
 </div>

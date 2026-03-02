@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { toast } from "svelte-sonner";
     import { onMount } from "svelte";
     import { invoke, convertFileSrc } from "@tauri-apps/api/core";
     import { listen } from "@tauri-apps/api/event";
@@ -14,13 +15,14 @@
         Settings,
         Loader2,
         X,
-        Check,
         ArrowRight,
         Disc,
+        Camera,
     } from "lucide-svelte";
     import DragZone from "$lib/components/DragZone.svelte";
     import GlassCard from "$lib/components/GlassCard.svelte";
     import * as mm from "music-metadata-browser";
+    import { captureAppScreenshot } from "$lib/utils/screenshot.ts";
 
     // --- STORES/STATE ---
     let audioFile: any = null;
@@ -45,19 +47,39 @@
 
     onMount(() => {
         const setup = async () => {
-            hasHandBrake = await invoke("check_handbrake");
-            unlistenProgress = await listen("video-progress", (event: any) => {
-                progress = Math.round(event.payload.progress);
-            });
-            unlistenStatus = await listen("video-status", (event: any) => {
-                status = event.payload.status;
-            });
+            try {
+                hasHandBrake = await invoke("check_handbrake");
+
+                unlistenProgress = await listen(
+                    "video-progress",
+                    (event: any) => {
+                        progress = Math.round(event.payload.progress);
+                    },
+                );
+                unlistenStatus = await listen("video-status", (event: any) => {
+                    status = event.payload.status;
+                });
+            } catch (e) {
+                console.error("Error in setup:", e);
+            }
         };
         setup();
+
+        const handleKeys = async (e: KeyboardEvent) => {
+            const isKeyJ = e.key.toLowerCase() === "j";
+            const isModifier = e.metaKey || e.ctrlKey;
+
+            if (isModifier && isKeyJ) {
+                e.preventDefault();
+                await captureAppScreenshot();
+            }
+        };
+        window.addEventListener("keydown", handleKeys);
 
         return () => {
             unlistenProgress?.();
             unlistenStatus?.();
+            window.removeEventListener("keydown", handleKeys);
         };
     });
 
@@ -136,10 +158,10 @@
     }
 </script>
 
-<div class="flex gap-8 w-full max-w-7xl h-full items-start">
+<div class="flex gap-4 w-full max-w-7xl h-full items-start overflow-hidden">
     <!-- Left Side: Drop Zones & Previews -->
-    <div class="flex-1 flex flex-col gap-8 h-full">
-        <div class="grid grid-cols-2 gap-8 flex-1">
+    <div class="flex-1 flex flex-col gap-4 h-full">
+        <div class="grid grid-cols-2 gap-4 h-48">
             <!-- Audio Drop Zone -->
             <DragZone
                 file={audioFile}
@@ -188,7 +210,7 @@
 
         <!-- Video Preview / Progress -->
         <GlassCard
-            class="h-64 flex flex-col justify-center items-center overflow-hidden"
+            class="flex-1 min-h-0 flex flex-col justify-center items-center overflow-hidden"
         >
             {#if isGenerating}
                 <div class="flex flex-col items-center gap-6 w-full max-w-md">
@@ -239,13 +261,13 @@
     </div>
 
     <!-- Sidebar: Options (Right Side) -->
-    <div class="w-96 glass-card h-full flex flex-col gap-6">
-        <div class="flex items-center gap-3 border-b border-white/10 pb-4">
+    <div class="w-80 glass-card h-full flex flex-col gap-3 p-4">
+        <div class="flex items-center gap-3 border-b border-white/10 pb-3">
             <Settings class="text-white/60" />
             <h2 class="text-xl font-bold tracking-tight">Project Options</h2>
         </div>
 
-        <div class="space-y-4 flex-1">
+        <div class="space-y-3 flex-1">
             <div class="space-y-2">
                 <label
                     for="video-title"

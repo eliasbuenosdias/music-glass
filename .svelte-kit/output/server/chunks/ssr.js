@@ -22,6 +22,11 @@ function subscribe(store, ...callbacks) {
   const unsub = store.subscribe(...callbacks);
   return unsub.unsubscribe ? () => unsub.unsubscribe() : unsub;
 }
+function get_store_value(store) {
+  let value;
+  subscribe(store, (_) => value = _)();
+  return value;
+}
 function compute_rest_props(props, keys) {
   const rest = {};
   keys = new Set(keys);
@@ -225,8 +230,8 @@ function style_object_to_string(style_object) {
   return Object.keys(style_object).filter((key) => style_object[key] != null && style_object[key] !== "").map((key) => `${key}: ${escape_attribute_value(style_object[key])};`).join(" ");
 }
 export {
-  setContext as a,
-  subscribe as b,
+  subscribe as a,
+  get_store_value as b,
   create_ssr_component as c,
   compute_rest_props as d,
   escape as e,
@@ -236,8 +241,9 @@ export {
   escape_attribute_value as i,
   each as j,
   add_attribute as k,
+  safe_not_equal as l,
   missing_component as m,
   noop as n,
-  safe_not_equal as s,
+  setContext as s,
   validate_component as v
 };

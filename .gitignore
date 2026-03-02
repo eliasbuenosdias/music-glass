@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 build
+.svelte-kit
+.vercel
+.netlify
 
 # Editor folders
 .vscode/*

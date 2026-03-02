@@ -11,14 +11,15 @@
   },
   "dependencies": {
     "@tauri-apps/api": "^2.0.0",
-    "@tauri-apps/plugin-shell": "^2.0.0",
     "@tauri-apps/plugin-dialog": "^2.0.0",
     "@tauri-apps/plugin-fs": "^2.0.0",
+    "@tauri-apps/plugin-shell": "^2.0.0",
+    "clsx": "^2.1.1",
     "lucide-svelte": "^0.454.0",
     "music-metadata-browser": "^2.5.10",
-    "clsx": "^2.1.1",
+    "svelte-sonner": "^0.3.28",
     "tailwind-merge": "^2.5.4",
-    "svelte-sonner": "^0.3.28"
+    "tauri-plugin-screenshots-api": "^2.2.0"
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "^3.0.6",

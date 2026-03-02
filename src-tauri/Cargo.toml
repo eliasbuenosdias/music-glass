@@ -20,6 +20,7 @@ tokio = { version = "1", features = ["full"] }
 anyhow = "1.0"
 tempfile = "3.26.0"
 regex = "1.10"
+tauri-plugin-screenshots = "2.2.0"
 
 [features]
 custom-protocol = ["tauri/custom-protocol"]

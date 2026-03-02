@@ -8,9 +8,10 @@
     "core:default",
     "shell:default",
     "dialog:default",
-    "fs:default",
     "core:event:default",
     "core:window:default",
-    "core:app:default"
+    "core:app:default",
+    "screenshots:default",
+    "core:path:default"
   ]
 }
